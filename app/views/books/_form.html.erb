@@ -1,0 +1,18 @@
+    <!--Bookモデルに対するフォームを作成しﾛｰｶﾙ環境で使えるようにします。-->
+    <!--|f|を使ってBookモデルのtitleやbody属性のカラムに対するテキストフィールドを作成出来るようにします-->
+<%= form_with model:book, local:true do |f| %>
+  <div class="form-group">    <!--Bootstrapでフォームを成形する為に"form-group"クラスを付与します-->
+    <%= f.label :title %>     <!--textフィールドに対するtitleというラベルを表示-->
+
+    <!--form_with model:bookで指定されたBookモデルのtitle属性の入力フィールドを作成-->
+    <!--form-controlはBootstrapのフレームワークを適用させ、且つbook_titleクラスでカスタマイズ出来るようにする-->
+    <%= f.text_field :title, class: 'form-control book_title' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :opinion %>
+    <%= f.text_area :body, class: 'form-control book_body' %>  <!--body属性の入力フィールド-->
+  </div>
+  <div class="form-group">
+    <%= f.submit class: 'btn btn-success' %>    <!--緑色のボタン-->
+  </div>
+<% end %>
