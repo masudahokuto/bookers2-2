@@ -20,7 +20,7 @@ import "../stylesheets/application";
 
 
 Rails.start()
-Turbolinks.start()
+// Turbolinks.start()
 ActiveStorage.start()
 
 require("trix")
